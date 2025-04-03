@@ -143,7 +143,7 @@ export class AppComponent {
         return round;
     }
 
-    // Sort participants that have seen the most workshops
+    // Prefer participants who have seen the least number of workshops
     private getSortedParticipantsByAvailability(seenWorkshops: Set<number>[]): number[] {
         return Array.from({ length: this.participantCount }, (_, i) => i)
             .sort((a, b) => (this.groupCount - seenWorkshops[a].size) - (this.groupCount - seenWorkshops[b].size));
